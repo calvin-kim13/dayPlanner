@@ -77,4 +77,11 @@ body {
   i {
     z-index: 100;
   }
+
+  #clearBtnContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem auto;
+  }
   
