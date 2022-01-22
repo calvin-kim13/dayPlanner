@@ -15,6 +15,6 @@
 
 ## Live Links:
 ### Github:
-- hello
+- https://github.com/calvin-kim13/dayPlanner
 ### Web Application:
 - hello
