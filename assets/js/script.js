@@ -2,6 +2,7 @@
 let timeDisplayEl = $('#currentDay');
 let saveBtnEl = $('.saveBtn');
 let clearBtnEl = $('#clear-btn')
+let textarea = $('textarea')
 
 // TIME AND DATE FUNCTION IN HEADER
 function runningTime() {
