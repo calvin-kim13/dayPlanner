@@ -18,4 +18,4 @@
 ### Github:
 - https://github.com/calvin-kim13/dayPlanner
 ### Web Application:
-- hello
+- https://calvin-kim13.github.io/dayPlanner/
