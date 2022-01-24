@@ -11,22 +11,25 @@ function runningTime() {
     setInterval(runningTime, 1000);
 }
 
-// SAVING VALUES IN TEXTAREA ON PAGE 
-$('#8').children('textarea').val(localStorage.getItem('8'))
-$('#9').children('textarea').val(localStorage.getItem('9'))
-$('#10').children('textarea').val(localStorage.getItem('10'))
-$('#11').children('textarea').val(localStorage.getItem('11'))
-$('#12').children('textarea').val(localStorage.getItem('12'))
-$('#1').children('textarea').val(localStorage.getItem('1'))
-$('#2').children('textarea').val(localStorage.getItem('2'))
-$('#3').children('textarea').val(localStorage.getItem('3'))
-$('#4').children('textarea').val(localStorage.getItem('4'))
-$('#5').children('textarea').val(localStorage.getItem('5'))
-$('#6').children('textarea').val(localStorage.getItem('6'))
-$('#7').children('textarea').val(localStorage.getItem('7'))
-$('#8pm').children('textarea').val(localStorage.getItem('8pm'))
-$('#9pm').children('textarea').val(localStorage.getItem('9pm'))
-$('#10pm').children('textarea').val(localStorage.getItem('10pm'))
+// BACKGROUND COLOR FUNCTION
+function renderTimeColor() {
+    const currentHour = moment().hours();
+    $('.time-block').each(function() {
+        const rowHour = parseInt($(this).attr('id'));
+        if (rowHour < currentHour) {
+            $(this).addClass('past');
+        } else if (rowHour === currentHour) {
+            $(this).addClass('present');
+        } else {
+            $(this).addClass('future');
+        };
+    });
+};
+
+// GETTING SAVED VALUES FROM LOCAL STORAGE 
+for (let i = 8; i < 23; i++) {
+    $(`#${i}`).children('textarea').val(localStorage.getItem(`${i}`));
+}
 
 // SAVE BUTTON FUNCTIONALITY
 saveBtnEl.on('click', function () {
@@ -42,7 +45,6 @@ clearBtnEl.on('click', function() {
     window.location.reload();
 })
 
+// CALLINV FUNCTIONS
+renderTimeColor();
 runningTime();
-
-
-
